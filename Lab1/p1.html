@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 1</title>
+    <style>
+        #changeColor{
+            animation-name: "Color_change";
+            animation-duration: 2s;
+            border: 1px solid black;
+            animation-fill-mode: forwards;
+
+        }
+        .move{
+            animation-name: movingBlock;
+            animation-duration: 2s;
+            animation-iteration-count: 3;
+            height:auto;
+            width: fit-content;
+            border: 1px solid black;
+            position: relative;
+        }
+        #delayedMovement{
+            position: relative;
+            height: auto;
+            width: fit-content;
+            border: 1px solid black;
+            position: relative;
+            animation-name: movingBlock;
+            animation-delay: 2s;
+            animation-duration:2s;
+            /* alaways use animation-duration property  */
+            animation-iteration-count: 1;
+        }
+        
+        .p::first-line{
+            color: red;
+            font-size:30px;
+        }
+        .p2::first-letter{
+            color:blue;
+            font-size:30px;
+        }
+        #link1{
+            color: orange;
+            
+        }
+        #link1:visited{
+            color : red;
+        }
+        @keyframes movingBlock {
+            0%{
+                top:0px;
+                left:0px
+
+            }
+            25%{
+                left:50px;
+                top:0px
+            }
+            50%{
+                top:50px;
+                left: 50px;
+            }
+            75%{
+                left:0px;
+                top:50px;
+            }
+            100%{
+                top:0px;
+                left:0px
+            }
+            
+        }
+        @keyframes Color_change{
+            from{background-color:aqua;}
+            to{background-color: rgb(223, 196, 255);}
+        }
+        #reverseMove{
+            position: relative;
+            height: auto;
+            width: fit-content;
+            border: solid black 1px;
+            animation-name:movingBlock;
+            animation-duration: 2s;
+            animation-direction: reverse;
+            animation-iteration-count:2
+        }
+        .sample::selection{
+            background-color:yellow;
+        }
+        .sample2:hover{
+            color: rgb(235, 26, 180);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Write HTML, CSS3 code for following animation effects (A) </h1>
+    <h2>
+        a.	changing background color of div from red to yellow.
+    </h2>
+    <div id="changeColor">This changes color</div>
+    <hr>
+    <h2>
+       b. moving div from Left to right, right to bottom, bottom to left and left to top.
+
+    </h2>
+    <div class="move">Moving Block</div>
+    <br>
+    <br>
+    <h2>
+        c. put delay of 2s in animation.
+
+    </h2>
+    <div id="delayedMovement">Delayed Movement.</div>
+    <br>
+    <br>
+    <h2>
+        d.	Change animation-iteration count property of program 2 to run infinite times
+    </h2>
+    <button id="countToInfinite" onclick="toInfinity()">Run the animation of Moving Block for infinite times. </button>
+    <h2>
+        e.	Change animation direction property to run it in reverse order.
+
+    </h2>
+    <div id="reverseMove">Reverse Moving Block </div>
+    <br>
+    <br>
+    <h2>f.	Change value of animation-timing-function property to change the speed of animation</h2>
+    <div class="move" style="animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 5.275);">Animation-timing-function rigged animation </div>
+    <br>
+    <br>    
+    <h1>2.	Write an HTML snippet with CSS for following effects: (A)</h1>
+    <h2>a.	Link after visited red color before visited orange color</h2>
+    <a href="#" id="link1"> The Link That Changes Color.</a>
+    <br>
+    <h2>
+        b.	Add special style(change color,font size etc) to first line of paragraph
+    </h2>
+    <p class="p">
+        This is the first line of the paragraph. It will appear in red color,<br>
+        larger font size, and bold style. The remaining lines of the paragraph<br>
+        will have the normal formatting.
+    </p>
+    <h2>c.	Add special style (change color,font size etc) to first letter of paragraph</h2>
+    <p class="p2">
+    This is the first paragrapph. <br>
+    The first letter with the use of pseudo-element will be styled differently than the rest of the content.<br>
+    </p>
+    <h2> d.	Change background color to yellow when user select particular text</h2>
+    <div class="sample">Select this text to change its background color to yellow.</div>
+    <h2>e.	Add special style to an element when user mouse over it.</h2>
+    <div class="sample2">Hover over this element to see the effect.</div>
+    <h2>3. Design complete personal website using CSS. (B)</h2>
+    <a href="#">Personal Website</a>
+
+    <script>
+        function toInfinity(){
+
+            document.getElementById("move").style.animationIterationCount = "infinite"
+        }
+    </script>
+</body>
+</html>
