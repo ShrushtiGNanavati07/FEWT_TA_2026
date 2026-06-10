@@ -1,0 +1,276 @@
+================================================================
+        GIT & GITHUB - BEGINNER'S GUIDE
+================================================================
+
+----------------------------------------------------------------
+SECTION 1: WHAT IS GIT?
+----------------------------------------------------------------
+
+Git is a VERSION CONTROL SYSTEM (VCS).
+
+Think of it like this:
+  - You are writing a school essay.
+  - You save it as: essay_v1.docx, essay_v2.docx, essay_final.docx
+  - This is manual version control — very messy!
+
+Git does this automatically and smartly.
+It tracks EVERY change you make to your files over time.
+You can go back to any previous version anytime.
+
+Key Point: Git works LOCALLY on your computer (no internet needed).
+
+----------------------------------------------------------------
+SECTION 2: WHAT IS GITHUB?
+----------------------------------------------------------------
+
+GitHub is a WEBSITE (https://github.com) where you can:
+  - Store your Git projects online (in the cloud)
+  - Share your code with others
+  - Collaborate with other developers
+  - Show your work to the world (like a portfolio)
+
+Simple Analogy:
+  Git    = Your diary (local, on your desk)
+  GitHub = Google Drive for your diary (online, shareable)
+
+Other similar platforms: GitLab, Bitbucket (same idea, different websites)
+
+----------------------------------------------------------------
+SECTION 3: KEY TERMS YOU MUST KNOW
+----------------------------------------------------------------
+
+REPOSITORY (Repo)
+  - A folder that Git is tracking
+  - It contains all your project files + the full history of changes
+  - Example: "my-website" is a repository
+
+COMMIT
+  - A snapshot/save point of your project at a specific time
+  - Like pressing "Save" in a video game
+  - Every commit has a message like: "Added login page"
+
+BRANCH
+  - A separate copy of your project to work on safely
+  - The main/default branch is called "main" (or "master")
+  - Example: Create a branch "add-dark-mode" to test dark mode
+    without breaking the main project
+
+MERGE
+  - Combining changes from one branch into another
+  - After testing dark mode, you merge it into main
+
+CLONE
+  - Downloading a copy of a GitHub repo to your computer
+
+PUSH
+  - Uploading your local commits to GitHub
+
+PULL
+  - Downloading the latest changes from GitHub to your computer
+
+FORK
+  - Making your own copy of someone else's GitHub repository
+
+PULL REQUEST (PR)
+  - A request to merge your changes into someone else's project
+  - Used for collaboration and code review
+
+----------------------------------------------------------------
+SECTION 4: INSTALLING GIT
+----------------------------------------------------------------
+
+WINDOWS:
+  1. Go to https://git-scm.com/download/win
+  2. Download and run the installer
+  3. Keep all default settings and click Next
+  4. Open "Git Bash" (installed with Git)
+
+MAC:
+  1. Open Terminal
+  2. Type: git --version
+  3. If not installed, it will prompt you to install it
+  OR install via Homebrew: brew install git
+
+
+VERIFY INSTALLATION:
+  Open terminal/Git Bash and type:
+  git --version
+  You should see something like: git version 2.42.0
+
+----------------------------------------------------------------
+SECTION 5: FIRST-TIME SETUP
+----------------------------------------------------------------
+
+PDF
+
+----------------------------------------------------------------
+SECTION 6: YOUR FIRST GIT PROJECT (Step-by-Step)
+----------------------------------------------------------------
+
+PDF
+----------------------------------------------------------------
+SECTION 7: THE GIT WORKFLOW (The Big Picture)
+----------------------------------------------------------------
+
+  [Working Directory] --> git add --> [Staging Area] --> git commit --> [Local Repo]
+                                                                              |
+                                                                          git push
+                                                                              |
+                                                                       [GitHub Repo]
+
+And to get changes FROM GitHub:
+  [GitHub Repo] --> git pull --> [Local Repo/Working Directory]
+
+----------------------------------------------------------------
+SECTION 8: WORKING WITH GITHUB
+----------------------------------------------------------------
+
+STEP 1 — Create a GitHub Account
+  Go to https://github.com and sign up (it's free!)
+
+STEP 2 — Create a New Repository on GitHub
+  - Click the "+" icon (top right) > "New repository"
+  - Give it a name (e.g., my-first-project)
+  - Choose Public or Private
+  - Click "Create repository"
+
+STEP 3 — Connect your Local Repo to GitHub
+  GitHub will show you commands. Use:
+  git remote add origin https://github.com/yourusername/my-first-project.git
+
+STEP 4 — Push your code to GitHub
+  git push -u origin main
+
+  Now your code is on GitHub!
+
+STEP 5 — Clone a repo (downloading someone's project)
+  git clone https://github.com/username/repository-name.git
+
+----------------------------------------------------------------
+SECTION 9: MOST USED GIT COMMANDS (Quick Reference)
+----------------------------------------------------------------
+
+  COMMAND                         WHAT IT DOES
+  -------                         ------------
+  git init                        Start tracking a folder with Git
+  git status                      See what's changed
+  git add .                       Stage ALL changed files
+  git add filename.txt            Stage a specific file
+  git commit -m "message"         Save a snapshot with a description
+  git log                         View commit history
+  git log --oneline               View short commit history
+  git diff                        See what changed (before staging)
+  git push                        Upload commits to GitHub
+  git pull                        Download latest from GitHub
+  git clone <url>                 Copy a GitHub repo to your computer
+  git branch                      List all branches
+  git branch new-feature          Create a new branch
+  git checkout new-feature        Switch to a branch
+  git checkout -b new-feature     Create AND switch to a new branch
+  git merge new-feature           Merge branch into current branch
+  git remote -v                   See connected remote (GitHub) repos
+
+----------------------------------------------------------------
+SECTION 10: UNDERSTANDING BRANCHES (Simple Example)
+----------------------------------------------------------------
+
+Imagine you have a working website and want to add a new feature:
+
+  main branch: [v1] --> [v2] --> [v3]  ← your live, working site
+                                  |
+                              [feature-branch] --> [test1] --> [test2]
+                                                                  |
+                                                   (merge back when ready)
+                                  |
+  main branch: [v1] --> [v2] --> [v3] --> [v4 with new feature]
+
+Commands:
+  git checkout -b add-search-bar     # Create & switch to new branch
+  # ... make changes, add, commit ...
+  git checkout main                  # Go back to main
+  git merge add-search-bar           # Bring in the new feature
+
+
+
+----------------------------------------------------------------
+SECTION 11: COMMON BEGINNER MISTAKES & FIXES
+----------------------------------------------------------------
+
+MISTAKE 1: Committed wrong thing
+  FIX: git revert HEAD
+  (Creates a new commit that undoes the last one — safe!)
+
+MISTAKE 2: Want to undo last commit (keep changes)
+  FIX: git reset --soft HEAD~1
+
+MISTAKE 3: Forgot to add a file to last commit
+  FIX: git add forgottenfile.txt
+       git commit --amend --no-edit
+
+MISTAKE 4: Working on wrong branch
+  FIX: git stash           (temporarily saves your work)
+       git checkout correct-branch
+       git stash pop        (brings back your saved work)
+
+MISTAKE 5: Merge conflict
+  - Happens when two people edited the same line
+  - Git marks the conflict in the file with <<<< ==== >>>>
+  - Open the file, manually fix it, then:
+    git add filename.txt
+    git commit -m "Resolved merge conflict"
+
+
+----------------------------------------------------------------
+SECTION 12: USEFUL TIPS FOR BEGINNERS
+----------------------------------------------------------------
+
+TIP 1: Write GOOD commit messages
+  BAD:  "changes" / "fix" / "update"
+  GOOD: "Fix login button not working on mobile"
+        "Add search bar to homepage"
+        "Update README with installation steps"
+
+TIP 2: Commit often!
+  Small, frequent commits are better than one huge commit.
+  Think: "Save early, save often."
+
+TIP 3: Always pull before you push
+  git pull   ← get latest changes first
+  git push   ← then push yours
+
+TIP 4: Use branches for every new feature
+  Never work directly on main for big changes.
+
+TIP 5: README.md is important
+  Every project should have a README.md file explaining:
+  - What the project does
+  - How to install and run it
+  - How to contribute
+
+----------------------------------------------------------------
+SECTION 13: LEARNING RESOURCES
+----------------------------------------------------------------
+
+OFFICIAL DOCS:
+  Git Documentation:    https://git-scm.com/doc
+  GitHub Docs:          https://docs.github.com
+
+FREE INTERACTIVE LEARNING:
+  Learn Git Branching:  https://learngitbranching.js.org
+  GitHub Skills:        https://skills.github.com
+
+CHEAT SHEET:
+  https://education.github.com/git-cheat-sheet-education.pdf
+
+----------------------------------------------------------------
+REMEMBER THESE 7 COMMANDS TO START:
+----------------------------------------------------------------
+
+  1. git init              → Start a new repo
+  2. git add .             → Stage all files
+  3. git commit -m "msg"   → Save a snapshot
+  4. git push              → Upload to GitHub
+  5. git pull              → Download from GitHub
+  6. git clone <url>       → Copy a GitHub repo
+  7. git status            → Check what's happening
+
