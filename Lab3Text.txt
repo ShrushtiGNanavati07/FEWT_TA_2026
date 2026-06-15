@@ -37,7 +37,7 @@ It displays ->A Confirmation question("For example: Are you sure you want to del
             ->Cancel button (returns False(in boolean datatype)).
 Example Syntax:
 
-var ans = confirm("Are you sure?");
+ans = confirm("Are you sure?");
 
 if(ans == true)
 {
@@ -53,7 +53,7 @@ It displays ->Input Boxes(Takes input as string from user.)
             -> Cancel button(submits null in the input box and exits popup)
 
 Example syntax:
-var name = prompt("Enter your name");
+name = prompt("Enter your name");
 
 document.write("Hello " + name);
 
