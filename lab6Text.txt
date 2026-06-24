@@ -1,0 +1,50 @@
+----------------------Program 1---------------------------
+WAP to display Faculties stored in array.
+---------------------Program 2-----------------------------
+push, pop, shift, unshift, splice, sort:
+
+arr = [3,2,5,1,7,10]
+
+=>arr.push(6)
+adds new element to the end.
+returns: new array size(here : 7)
+
+therefore arr ---> [3,2,5,1,7,10,6]
+
+=>array.pop()
+removes the last array of the element.
+returns: the removed element(here: 6)
+
+therefore arr ---> [3,2,5,1,7,10]
+
+=>array.shift()
+removes first element
+returns: the element that was removed(here:3 )
+
+therefore arr ---> [2,5,1,7,10,6]
+
+=>array.unshift(0)
+adds an element at the start.
+returns: the new array length(here: 7)
+
+therefore arr ---> [0.3,2,5,1,7,10,6]
+
+=>array.slice(start, end+1)
+[1,2,3,4].slice(1,3) ----> [1,4]
+
+>The slice() method creates a new array.
+>The slice() method does not remove any elements from the source array.
+
+=>array.splice(index, length, elements)
+[1,2,3,4,5,6].splice(2,3)--->[1,2,6] //example of removing elements
+[1,2,3,4,5,6,7,8].splice(5,3,"Hello","World","Hi") --> [1,2,3,4,5,"Hello","world","Hi"]// Adding elements by overiding
+
+returns removed elements.
+
+=>array.sort()
+Input Array : arr= [20,1,3,4,101];
+arr.sort() ---> [1,101,20,3,4];
+Why??
+
+
+Because the elements of array are compared in their Ascii values "101"<"20"
