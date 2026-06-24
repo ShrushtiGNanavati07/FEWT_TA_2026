@@ -48,3 +48,39 @@ Why??
 
 
 Because the elements of array are compared in their Ascii values "101"<"20"
+
+
+
+-----------------------P3--------------
+arr = [
+            {
+                Name : "Ram",
+                Age : 17,
+                SPI : 9.8,
+                Branch : "computer"
+            },
+             {
+                Name : "Ramesh",
+                Age : 18,
+                SPI : 9.8,
+                Branch : "computer"
+            },
+             {
+                Name : "Mahesh",
+                Age : 17,
+                SPI : 9.8,
+                Branch : "computer"
+            },
+             {
+                Name : "Meera",
+                Age : 18,
+                SPI : 9.8,
+                Branch : "computer"
+            },
+             {
+                Name : "Rutvi",
+                Age : 19,
+                SPI : 9.8,
+                Branch : "computer"
+            }
+        ];
