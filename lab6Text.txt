@@ -31,10 +31,11 @@ therefore arr ---> [0.3,2,5,1,7,10,6]
 
 =>array.slice(start, end)
 {Note: =>end is exclusive.
-            => returns a new array
+            => returns a new array of elements that are removed.
             => NO CHANGES IN OG ARRAY.}
-[1,2,3,4].slice(1,3) ----> [1,4]
+[1,2,3,4].slice(1,3) 
 
+returns: [2,3]
 >The slice() method creates a new array.
 >The slice() method does not remove any elements from the source array.
 
