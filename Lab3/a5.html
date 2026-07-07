@@ -1,0 +1,40 @@
+<!-- WAP in JavaScript to check whether the given number is palindrome or not -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Palindrome Number</title>
+</head>
+
+<body>
+
+<script>
+
+     num = parseInt(prompt("Enter Number:"));
+
+     original = num;
+     reverse = 0;
+     rem;
+
+    while(num > 0)
+    {
+        rem = num % 10;
+
+        reverse = (reverse * 10) + rem;
+
+        num = parseInt(num / 10);
+    }
+
+    if(original == reverse)
+    {
+        alert("Palindrome Number");
+    }
+    else
+    {
+        alert("Not Palindrome Number");
+    }
+
+</script>
+
+</body>
+</html>

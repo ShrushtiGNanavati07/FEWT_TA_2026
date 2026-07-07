@@ -1,0 +1,42 @@
+<!--check the given number is the armstrong number or not.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A6</title>
+</head>
+<body>
+    <script>
+        n = parseInt(prompt("Enter the number"));
+
+        temp1=n;
+        temp2=n;
+        rem=0;
+        count=0;
+        sum=0;
+
+        // size = n.parseString.length()
+
+        while(n!=0){
+            rem = n%10;
+            count++;
+            n = Math.floor(n/10);
+        }
+
+        while(temp1!=0){
+            rem = temp1 % 10;
+            sum = sum + Math.pow(rem , count);
+            temp1 = Math.floor(temp1/10);
+        }
+
+        if(temp2 == sum){
+            document.write("armstrong");
+        } else{
+             document.write("not armstrong");
+        }
+    </script>
+    
+</body>
+</html>

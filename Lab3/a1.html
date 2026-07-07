@@ -1,0 +1,57 @@
+<!-- WAP in JavaScript to make simple calculator using popup box.  -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+</head>
+
+<body>
+
+<script>
+
+    num1 = parseInt(prompt("Enter First Number:"));
+    num2 = parseInt(prompt("Enter Second Number:"));
+
+    choice = prompt(
+        "Enter Operation (+, -, *, /):"
+    );
+
+    
+
+    if(choice == "+")
+    {
+        ans = num1 + num2;
+        alert("Answer = " + ans);
+    }
+    else if(choice == "-")
+    {
+        ans = num1 - num2;
+        alert("Answer = " + ans);
+    }
+    else if(choice == "*")
+    {
+        ans = num1 * num2;
+        alert("Answer = " + ans);
+    }
+    else if(choice == "/")
+    {
+        if(num2 == 0){
+            alert("Cant devide by 0");
+        }
+        else{
+            ans = num1 / num2;
+           alert("Answer = " + ans);
+        }
+    }
+    else
+    {
+        alert("Invalid Operation");
+    }
+    
+    
+
+</script>
+
+</body>
+</html>

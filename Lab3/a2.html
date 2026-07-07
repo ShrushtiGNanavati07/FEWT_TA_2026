@@ -1,0 +1,42 @@
+<!-- WAP in JavaScript to check whether the given number is prime or not -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prime Number</title>
+</head>
+
+<body>
+
+<script>
+
+     num = parseInt(prompt("Enter Number:"));
+
+     flag = 0;
+
+    for(i=2; i<num; i++)
+    {
+        if(num % i == 0)
+        {
+            flag = 1;
+            break;
+        }
+    }
+
+    if(num <= 1)
+    {
+        alert("Not Prime Number");
+    }
+    else if(flag == 0)
+    {
+        alert(num + " is Prime Number");
+    }
+    else
+    {
+        alert(num + " is Not Prime Number");
+    }
+
+</script>
+
+</body>
+</html>
