@@ -1,0 +1,160 @@
+<!-- WAP to display Faculties stored in array-->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>A1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+  <script>
+
+    // using simple array
+
+    // arr = ["a","b","c"];
+    // document.write("<table class='table'>");
+    //     document.write("<thead class='table table-dark'>");
+    //         document.write("<th>Name</th>");
+    //     document.write("<thead/>");
+
+    // for(i=0; i<arr.length; i++){
+    //     document.write("<tr class='table table-success'>");
+    //         document.write("<td>",arr[i],"</td>");
+    //     document.write("</tr>");
+    // }
+    // using array of object
+    // arr = [
+//             {
+//                 Name : "Arjun",
+//                 Department : "Computer",
+//                 Experience : 5,
+//                 city : "Rajkot"
+//             },
+
+//              {
+//                 Name : "Akshita",
+//                 Department : "Mechanical",
+//                 Experience : 6,
+//                 city : "Morbi"
+//             },
+
+//              {
+//                 Name : "Jadeja",
+//                 Department : "Computer",
+//                 Experience : 7,
+//                 city : "Mumbai"
+//             },
+
+//             {
+//                 Name : "Dharmik",
+//                 Department : "Computer",
+//                 Experience : 8,
+//                 city : "Mumbai"
+//             },
+
+//              {
+//                 Name : "vishal",
+//                 Department : "Civil",
+//                 Experience : 4,
+//                 city : "Gondal"
+//             },
+
+//             {
+//                 Name : "Dhruvik",
+//                 Department : "Diploma",
+//                 Experience : 5,
+//                 city : "Rajkot"
+//             }
+//         ];
+
+//     document.write("<table class='table'>");
+//             document.write("<thead class='table table-dark'>");
+//             document.write("<th>Name</th>");
+//             document.write("<th>Department</th>");
+//             document.write("<th>Experience</th>");
+//             document.write("<th>city</th>");
+//             document.write("</thead>");
+
+//             for(i=0;i<arr.length;i++){
+//                 document.write("<tr class='table table-success'>");
+//                     document.write("<td>",arr[i].Name,"</td>");
+//                     document.write("<td>",arr[i].Department,"</td>");
+//                     document.write("<td>",arr[i].Experience,"</td>");
+//                     document.write("<td>",arr[i].city,"</td>");
+//                 document.write("</tr>");
+//             }
+
+//     document.write("</table>");
+
+
+    // using card
+
+
+    arr = [
+            {
+                Name : "Arjun",
+                Department : "Computer",
+                Experience : 5,
+                city : "Rajkot"
+            },
+
+             {
+                Name : "Akshita",
+                Department : "Mechanical",
+                Experience : 6,
+                city : "Morbi"
+            },
+
+             {
+                Name : "Jadeja",
+                Department : "Computer",
+                Experience : 7,
+                city : "Mumbai"
+            },
+
+            {
+                Name : "Dharmik",
+                Department : "Computer",
+                Experience : 8,
+                city : "Mumbai"
+            },
+
+             {
+                Name : "vishal",
+                Department : "Civil",
+                Experience : 4,
+                city : "Gondal"
+            },
+
+            {
+                Name : "Dhruvik",
+                Department : "Diploma",
+                Experience : 5,
+                city : "Rajkot"
+            }
+        ];
+
+        document.write("<div class='card' style='width: 18rem;''>");
+    
+            for(i=0; i<arr.length; i++){
+                document.write(`
+                <div class="card-body">
+                    <h5 class="card-title">${arr[i].Name}</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">${arr[i].Department}</h6>
+                    <p class="card-text">${arr[i].Experience}</p>
+                    <a href="#" class="card-link">${arr[i].city}</a>
+                </div>
+                <br/><hr/>
+                `)
+            }
+  
+        document.write("</div>");
+
+
+  </script>
+  <body>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>

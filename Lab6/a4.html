@@ -1,0 +1,77 @@
+<!-- WAP to display products stored in array.-->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>4</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    
+
+    <script>
+        
+        arr = [
+            {
+                Name : "Pani Puri",
+                Price : 30,
+                ShopName : "Bajarang panipuri",
+                Image: "panipuriimages.jpg"
+            },
+             {
+                Name : "Dabeli",
+                Price : 50,
+                ShopName : "Kathchi Dabeli",
+                Image : "dabeli.jpg"
+            },
+            {
+                Name : "Dosa",
+                Price : 100,
+                ShopName : "south Indian",
+                Image : "dhosa.jpg"
+            },
+            {
+                Name : "Idli",
+                Price : 40,
+                ShopName : "Indian idli",
+                Image : "idli.jpg"
+            },
+            {
+                Name : "sandwich",
+                Price : 40,
+                ShopName : "indian masala sandwitch",
+                Image : "sandwitch.jpg"
+            },
+        ];
+
+        for(i=0;i<arr.length;i++){
+
+    document.write("<div class='card mb-3 bg-dark-subtle'>");
+    document.write("<div class='row g-0'>");
+
+                document.write("<div class='col-md-4'>");
+                    document.write("<img src='"+arr[i].Image+"' class='img-fluid rounded-start h-100 w-75'/>");
+                document.write("</div>");
+
+        document.write('<div class="col-md-8">');
+        document.write('<div class="card-body color-light">');
+        document.write("<div>");
+
+            document.write("Item :-",arr[i].Name);
+            document.write("<br>Price :- ",arr[i].Price);
+            document.write("<br>shop name :- ",arr[i].ShopName);
+
+        document.write("</div>");
+        document.write("</div>");
+        document.write("</div>");
+    document.write("</div>");
+    document.write("</div>");
+        }
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
