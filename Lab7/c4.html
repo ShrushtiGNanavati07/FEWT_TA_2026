@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        .td {
+            padding-bottom: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<!-- we want to stop the default form submission behavior.
+ When the form is submitted, the browser automatically creates an event
+ object and passes it to submitform(event). -->
+
+    <form onsubmit="submitform(event)" novalidate>
+        <table style="text-align: center; margin-left: 190px; padding: 20px; background-color: rgb(222, 216, 135);">
+            <caption><h3>Form</h3></caption>
+
+            <tr>
+                <td>Username :</td>
+                <td><input type="text" id="username"></td>
+            </tr>
+            <tr>
+                <td>Password :</td>
+                <td><input type="password" id="password"></td>
+            </tr>
+            <tr>
+                <td>Confirm Password :</td>
+                <td><input type="password" id="confirmpassword"></td>
+            </tr>
+            <tr>
+                <td>Enrollment Number :</td>
+                <td><input type="number" id="enrollment"></td>
+            </tr>
+            <tr>
+                <td>Email :</td>
+                <td><input type="email" id="email"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="submit" style="margin-left: -20px; margin-bottom: -20px; margin-top: 5px; background-color:rgb(77, 101, 8);">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        function submitform(e) {
+           // e.preventDefault(); 
+            formvalidate(); 
+        }
+
+        function formvalidate() {
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmpassword").value;
+            const enrollment = document.getElementById("enrollment").value;
+            const email = document.getElementById("email").value.trim();
+
+            // Username validation
+            if (username.length < 8) {
+                alert("Enter valid Username.");
+                return;
+            }
+
+            // Password validation
+
+            //  password must contain at least 1 digit and 1 special character and should be between 8-12 characters
+             hasDigit = new RegExp("\\d");
+            //  \d to the regex engine, you must write \\d.
+             hasSpecial = new RegExp("[^A-Za-z0-9]");//^=not
+             length = new RegExp("^.{8,12}$");//^=start
+            
+            
+            if (!(hasDigit.test(password) && hasSpecial.test(password) && length.test(password))) {
+                alert("Password must contain at least 1 digit and 1 special character and should be between 8-12 characters.");
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return;
+            }
+
+            // Enrollment number validation
+            enpattern = /^2501010[0-9]{4}$/
+            if (!enpattern.test(enrollment) || isNaN(enrollment)) {
+                alert("Please enter a valid enrollment number.");
+                return;
+            }
+
+            // Email validation
+
+            // abc        → [^\s@]+
+            // @          → @
+            // gmail      → [^\s@]+
+            // .          → \.
+            // com        → [^\s@]+
+
+            
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+            // If all validations pass
+            alert("Form submitted successfully!");
+        }
+    </script>
+
+</body>
+</html>
