@@ -1,0 +1,49 @@
+<!--take array from user and sort them using quick sort.-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quick Sort</title>
+</head>
+<body>
+
+<script>
+    let input = prompt("Enter array elements separated by commas:");
+    let arr = input.split(",").map(Number);
+
+    let stack = [[0, arr.length - 1]];
+
+    while (stack.length > 0) {
+        let range = stack.pop();
+        let low = range[0];
+        let high = range[1];
+
+        if (low < high) {
+            let pivot = arr[high];
+            let i = low - 1;
+
+            for (let j = low; j < high; j++) {
+                if (arr[j] < pivot) {
+                    i++;
+                    let temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+
+            let temp = arr[i + 1];
+            arr[i + 1] = arr[high];
+            arr[high] = temp;
+
+            let pi = i + 1;
+
+            stack.push([low, pi - 1]);
+            stack.push([pi + 1, high]);
+        }
+    }
+
+    document.write("Sorted Array: " + arr);
+</script>
+
+</body>
+</html>

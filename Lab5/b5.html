@@ -1,0 +1,33 @@
+<!-- wap that uses loop that searches a word in sentence held in an array and returning the
+ index of the word.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B5</title>
+</head>
+<body>
+
+    <script>
+        arr = [];
+        str = prompt("Enter the string ");
+        arr = str.split(" ");
+        
+// "" --> letter vache , aave || "," --> word aem name aalag padi jai but word find karavo 
+// che te no made
+
+        document.write(arr);
+
+        word = prompt("Enter the word to find ");
+
+        index = arr.indexOf(word);
+
+        document.write("<br>index of word is : "+index);
+
+
+    </script>
+    
+</body>
+</html>
