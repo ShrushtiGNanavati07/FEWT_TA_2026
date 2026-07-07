@@ -1,0 +1,71 @@
+<!--print digits into words.-->
+<!DOCTYPE html>
+<html l ang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B6</title>
+</head>
+
+<body>
+    <script>
+        a = parseInt(prompt("Enter the number from 0 to 999"));
+        temp = a;
+        //
+        arr1 = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+        arr2 = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
+        arr3 = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
+        // the first 2 empty strings are kept because indexing starts from 0, and tens words start from 20.
+        
+        Words = "";
+        if (isNaN(a)) {
+            document.write("not a number");
+        } else {
+            if (a > 999) {
+                document.write("Out of range");
+            }
+            else if (a < 10) {
+                Words = " " + arr1[a];
+            }   
+            else if (a < 20) {//14 = [14-10 = 4]
+                Words = " " + arr2[a - 10];
+            }
+            else if (a < 100) {// 25--> 
+                Words = " " + arr3[Math.floor(a / 10)];//
+                if (a % 10 != 0) {//37 --> arr1[7]
+                    Words += " " + arr1[a % 10];
+                }
+            } else if (a == 100) {
+                Words = " " + "One Hundred";
+            }
+            else {
+                if (a > 100) {
+                    Words = " " + arr1[Math.floor(a / 100)] + " hundred ";
+                    remainder = a % 100;
+
+                    if (remainder > 0) {
+
+                        if (remainder < 10) {
+                            Words += " " + arr1[remainder];
+                        }
+                        else if (remainder < 20) {
+                            Words += " " + arr2[remainder - 10];
+                        }
+                        else {
+                            Words += arr3[Math.floor(remainder / 10)];
+                            if (remainder % 10 != 0) {
+                                Words += " " + arr1[remainder % 10];
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        document.write("In Word = " + Words);
+    </script>
+
+</body>
+
+</html>

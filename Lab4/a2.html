@@ -1,0 +1,32 @@
+<!-- prime number between range -->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A2</title>
+</head>
+<body>
+    <script>
+
+        a = parseInt(prompt("Enter the starting range"));
+        b = parseInt(prompt("Enter ending range"));
+
+        count=0;
+        
+        for(i=a;i<=b;i++){
+            for(j=2;j<=i/2;j++){
+                if(i%j==0){
+                    count++;
+                    break
+                }
+            }
+            if(count==0){
+                document.write(i+",");
+            }
+            count=0;
+         }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!-- GCD(gretest common divisior) of two numbers.
+ eg , 4 , 12 == 4-->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A4</title>
+ </head>
+ <body>
+    <script>
+
+        a = parseInt(prompt("Enter the number 1"));
+        b = parseInt(prompt("Enter the number 2"));
+
+        min = Math.min(a,b);
+
+        gcd=1;
+        for(i=2;i<=min;i++){
+            if(a%i==0 && b%i==0){
+                 gcd = i;
+            } 
+        }
+        document.write("GCD is = "+gcd);
+
+
+
+    </script>
+    
+ </body>
+ </html>

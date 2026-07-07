@@ -1,0 +1,26 @@
+<!-- take 2 digit number and then seperate these  digits then multiply 1st digit by itself for 2nd digit times.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B5</title>
+</head>
+<body>
+    <script>
+        n = parseInt(prompt("Enter the 2 digit number"));
+
+        ans = 1;
+
+        lastdigit = n%10;
+        n = Math.floor(n/10);
+        firstdigit=n%10;
+
+        ans = Math.pow(firstdigit,lastdigit);
+
+        document.write(ans);
+    </script>
+
+    
+</body>
+</html>
