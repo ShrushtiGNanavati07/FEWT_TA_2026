@@ -1,0 +1,105 @@
+<!-- . WAP to perform CRUD operation on Array using HTML and JavaScript. 
+ c = create(add new data) , r = read(retriving data) , u = update(update the data) , d = delete(delete the data)-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C7</title>
+    <style>
+        .button {
+            border-radius: 5px;
+            margin: 3px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <lable>Username :-</lable>
+    <input type="text" id="uname">
+    <button onclick="adduname()" id="add">ADD</button>
+    <br><br>
+
+    <table border="1px solid black" style="width: 100%; background-color: rgb(158, 221, 176);">
+        <tr colspan="4">
+            <th colspan="4">ID</th>
+            <th colspan="4">UserName</th>
+            <th colspan="4">Action</th>
+        </tr>
+
+        <tbody id="tblbody" style="text-align: center;">
+            <!-- add from script tag-->
+        </tbody>
+    </table>
+
+    <script>
+
+        arr = [];
+        editindex = -1;
+
+        function adduname() {
+
+            name = document.getElementById("uname").value;
+
+            // edit
+            if (editindex != -1) {
+                arr[editindex] = name;
+                editindex = -1;
+                document.getElementById("add").innerHTML = "Add";
+            }
+            //add
+            else {
+
+                if (name == '') {
+                    alert("Please enter the name");
+                }
+                else {
+                    arr.push(name);
+                }
+            }
+            display();
+            document.getElementById("uname").value = " ";
+        }
+
+        function display() {
+            temp = " "; // to store all rows data
+
+            for (i = 0; i < arr.length; i++) {
+
+                temp += `
+                <tr style="text-align:'center'">
+                <td colspan="4"> ${i + 1} </td>
+                <td colspan="4"> ${arr[i]} </td>
+                <td colspan="4"> 
+                    <button onclick='edit(${i})' id=${i} class="button" style="background-color:rgb(129, 189, 230);"> Edit </button>  
+                    <button onclick='deleterow(${i})' id=${i} class="button" style="background-color:red;"> Delete </button> 
+                </td>
+                </tr>
+                
+                `
+                
+            }
+            document.getElementById('tblbody').innerHTML = temp;
+        }
+
+        function edit(index){
+           editindex = index;
+
+          document.getElementById("add").innerHTML = "Edit";
+          document.getElementById("uname").value = arr[editindex];
+        }
+
+        function deleterow(index){
+             arr.splice(index , 1);      // delete 1 row from index
+            display();
+        }
+
+    </script>
+
+</body>
+
+
+</html>

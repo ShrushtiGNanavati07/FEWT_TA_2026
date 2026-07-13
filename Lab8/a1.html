@@ -1,0 +1,36 @@
+<!-- WAP to change background color on click of button-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A1</title>
+    <style>
+        body{
+            background-color: blanchedalmond;
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="colorchange()" id="color">CLICK</button>
+    <p id="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, cum delectus omnis explicabo sunt repellat<br> mollitia tempore quae error iure vitae sint quasi nesciunt consectetur corrupti fugit harum vel voluptate?</p>
+
+    <script>
+
+        function colorchange(){
+
+          // document.getElementsByTagName("body")[0].style.backgroundColor = "red";
+           document.body.style.backgroundColor="blue";
+
+           document.getElementById("para").style.backgroundColor="green";
+            document.getElementById("para").style.color="yellow";
+
+        }
+        
+    </script>
+
+    
+</body>
+</html>

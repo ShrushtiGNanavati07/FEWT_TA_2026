@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change HTML Properties</title>
+</head>
+<body>
+
+    <h2 id="heading">Hello JavaScript</h2>
+
+    <button onclick="changeProperty()">
+        Change Properties
+    </button>
+
+    <script>
+
+        function changeProperty() {
+
+            let ref = document.getElementById("heading");
+
+            ref.innerHTML = "Properties Changed";
+
+            ref.style.color = "white";
+
+            ref.style.backgroundColor = "blue";
+
+            ref.style.fontSize = "40px";
+
+            ref.style.border = "3px solid black";
+
+            ref.style.padding = "10px";
+        }
+
+    </script>
+
+</body>
+</html>

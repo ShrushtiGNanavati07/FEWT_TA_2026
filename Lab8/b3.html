@@ -1,0 +1,33 @@
+<!--keyboard event-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A3</title>
+</head>
+<body>
+    <input type="text" id="txtname" onkeydown="down(event)" placeholder="key down">     <!--badhu aave"-->
+    <input type="text" id="txt" onkeyup="up(event)" placeholder="key up">           <!--badhu aave-->
+    <input type="text" id="txt2" onkeypress="press(event)" placeholder="key press">       <!--all char , enter , digits-->
+        <!--keyup & keydown unprintable key press thai te pan show kare . keypress no kare-->
+    
+    <script>
+        function down(e){
+            ref = document.getElementById("txtname");
+            console.log(e.key);
+            //console.log(e);
+        }
+        function up(e){
+            ref2 = document.getElementById("txt");
+            console.log(e.key);
+        }
+          function press(e){
+            ref3 = document.getElementById("txt2");
+            console.log(e.key);
+        }
+       
+    </script>
+</body>
+</html>

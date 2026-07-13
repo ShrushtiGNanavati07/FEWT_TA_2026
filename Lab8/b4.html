@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Events</title>
+</head>
+<body>
+
+    <h2>Form Events Example</h2>
+
+    <form onsubmit="return submitEvent()" 
+          onreset="resetEvent()">
+
+        Username:
+        <input type="text" id="uname"
+            onfocus="focusEvent()"
+            onblur="blurEvent()"
+            onchange="changeEvent()"
+            oninput="inputEvent()"
+            onselect="selectEvent()"
+            required>
+        <br><br>
+
+        Email:
+        <input type="email" id="email"
+            oninvalid="invalidEvent()"
+            required>
+        <br><br>
+
+        Search:
+        <input type="search" id="search"
+            onsearch="searchEvent()">
+        <br><br>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+
+    </form>
+
+    <h3 id="output"></h3>
+
+    <script>
+
+        function show(msg) {
+            document.getElementById("output").innerHTML = msg;
+        }
+
+        function focusEvent() {
+            show("Focus Event Fired");
+        }
+
+        function blurEvent() {
+            show("Blur Event Fired");
+        }
+
+        function changeEvent() {
+            show("Change Event Fired");
+        }
+
+        function inputEvent() {
+            show("Input Event Fired");
+        }
+
+        function selectEvent() {
+            show("Select Event Fired");
+        }
+
+        function invalidEvent() {
+            show("Invalid Event Fired");
+        }
+
+        function searchEvent() {
+            show("Search Event Fired");
+        }
+
+        function submitEvent() {
+            show("Submit Event Fired");
+            return false; // Prevent page refresh
+
+        //Normally when you click Submit, browser refreshes page or sends form data.
+
+        //Because of refresh:
+            // Output disappears
+            // Event message may not be visible
+            
+        }
+
+        function resetEvent() {
+            show("Reset Event Fired");
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!-- Write a JavaScript that handles following mouse events. Add necessary elements. (B)
+If the mouse is over the heading should turn yellow and if the mouse goes out of the heading it should turn black.
+If ƒindtime button is clicked show time and date information.
+If button named “red” is clicked, background should change to red and If button named “green” is clicked, background should
+change to green. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="heading" onmouseover="yellow()" onmouseout="black()">Mouse Events</h1>
+
+    <br/><br/>
+
+    <button onclick="showtime()">Find time</button>
+    <button onclick="red()">Red</button>
+    <button onclick="green()">Green</button>
+
+    <br/><br/>
+
+    <h4 id="time"></h4>
+    <script>
+
+        function yellow(){
+            document.getElementById('heading').style.color = "yellow";
+        }
+
+        function black(){
+            document.getElementById('heading').style.color = "black";
+        }
+
+        function red(){
+            document.body.style.backgroundColor = "red";
+        }
+        
+        function green(){
+            document.body.style.backgroundColor = "green";
+        }
+        
+        function showtime(){
+            t = new Date();
+            document.getElementById("time").innerHTML = t;
+        }
+    </script>
+
+</body>
+</html>

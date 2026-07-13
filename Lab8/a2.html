@@ -1,0 +1,67 @@
+<!-- WAP to recognize which mouse event is ƒired. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A2</title>
+</head>
+<body>
+
+    <button id="clickbtn" onclick="mouseEvent()">CLICK</button><br>
+   <!-- <button id="mouse" id="clickbtn2"  onclick="mouseEvent()">mouse event</button>-->
+    <span id="text"></span>
+
+    <script>
+
+        function mouseEvent(){
+
+            document.getElementById("clickbtn").addEventListener('click', ()=> {
+                document.getElementById("text").innerHTML = "click"; 
+            });
+
+            document.getElementById("clickbtn").addEventListener('dblclick', ()=> {
+                document.getElementById("text").innerHTML = "double click"; 
+            });
+
+            document.getElementById("clickbtn").addEventListener('mousedown', ()=> {
+                 document.getElementById("text").innerHTML = "mousedown";
+            });
+             document.getElementById("clickbtn").addEventListener('mousedup', ()=> {
+                 document.getElementById("text").innerHTML = "mouseup";
+            });
+             document.getElementById("clickbtn").addEventListener('mousedover', ()=> {
+                 document.getElementById("text").innerHTML = "mouseover";
+            });
+             document.getElementById("clickbtn").addEventListener('mousemove', ()=> {
+                 document.getElementById("text").innerHTML = "mousemove";
+            });
+        }
+    </script>
+    
+</body>
+</html>
+
+
+
+<!-- innertext => don't consider html
+     innerHTML => consider html
+     
+     eg; <p id="demo"></p>
+
+        <script>
+        document.getElementById("demo").innerText = "<b>Hello</b>";
+        </script>
+
+        => <b>Hello</b>
+
+    eg; <p id="demo"></p>
+
+        <script>
+        document.getElementById("demo").innerHTML = "<b>Hello</b>";
+        </script>
+
+        => Hello(bold)
+
+--> 

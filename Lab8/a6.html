@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+
+    <style>
+        table{
+            border: 2px solid black;
+            padding: 20px;
+        }
+
+        td{
+            padding: 8px;
+        }
+
+        h2{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Student Registration Form</h2>
+
+    <form onsubmit="return validateForm()">
+
+        <table align="center">
+
+            <tr>
+                <td>Name :</td>
+                <td>
+                    <input type="text" id="name">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Email :</td>
+                <td>
+                    <input type="text" id="email">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Password :</td>
+                <td>
+                    <input type="password" id="password">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Mobile :</td>
+                <td>
+                    <input type="text" id="mobile">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Gender :</td>
+                <td>
+                    <input type="radio" name="gender" id="male"> Male
+                    <input type="radio" name="gender" id="female"> Female
+                </td>
+            </tr>
+
+            <tr>
+                <td>Course :</td>
+                <td>
+                    <select id="course">
+                        <option value="">Select Course</option>
+                        <option>BCA</option>
+                        <option>BBA</option>
+                        <option>BCom</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Register">
+                </td>
+            </tr>
+
+        </table>
+
+    </form>
+
+    <script>
+
+        function validateForm() {
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let mobile = document.getElementById("mobile").value;
+            let male = document.getElementById("male");
+            let female = document.getElementById("female");
+            let course = document.getElementById("course").value;
+
+            let emailPattern =
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            // Name Validation
+            if (name.length < 3) {
+                alert("Enter valid name");
+                return false;
+            }
+
+            // Email Validation
+            if (!email.match(emailPattern)) {
+                alert("Enter valid email");
+                return false;
+            }
+
+            // Password Validation
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters");
+                return false;
+            }
+
+            // Mobile Validation
+            if (mobile.length != 10 || isNaN(mobile)) {
+                alert("Enter valid 10 digit mobile number");
+                return false;
+            }
+
+            // Gender Validation
+            if (!male.checked && !female.checked) {
+                alert("Select gender");
+                return false;
+            }
+
+            // Course Validation
+            if (course == "") {
+                alert("Select course");
+                return false;
+            }
+
+            alert("Registration Successful");
+
+            return false;
+        }
+
+    </script>
+
+</body>
+</html>
+
+
+
