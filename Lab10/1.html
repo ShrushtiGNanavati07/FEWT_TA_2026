@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse Events</title>
+    
+</head>
+<body>
+    <h2>Click anywhere</h2>
+    <p id="msg"></p>
+
+    <script>
+        // Left mouse button click
+        document.addEventListener("click", function () {
+            document.getElementById("msg").innerHTML = "Left Clicked";
+        });
+
+        // Right mouse button click
+        //context menu etale right click kariye tyare je open thay e
+        document.addEventListener("contextmenu", function (event) {
+            event.preventDefault(); // Prevent default context menu
+            document.getElementById("msg").innerHTML = "Right Clicked";
+        });
+    </script>
+</body>
+</html>

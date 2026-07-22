@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="checkbox" id="101" value="101" onclick="showIsChecked()">
+    <label for="101">101</label>
+    <br>
+    <input type="checkbox" id="102" value="102" onclick="showIsChecked()">
+    <label for="102">102</label>
+    <br>
+    <input type="checkbox" id="103" value="103"  onclick="showIsChecked()">
+    <label for="103">103</label>
+    <br>
+    <input type="checkbox" id="104" value="104" onclick="showIsChecked()">
+    <label for="104">104</label>
+    <br>
+    <input type="checkbox" id="105" value="105" onclick="showIsChecked()">
+    <label for="105">105</label>
+
+    <h1></h1>
+
+    <script>
+        function showIsChecked() {
+            checkBox = document.getElementsByTagName("input")
+            console.log(checkBox)
+            console.log(checkBox[1].checked)
+            ans  = []
+            for (i = 0; i < checkBox.length; i++) {
+                if (checkBox[i].checked) {
+                    // console.log(checkBox[i])
+                    ans.push(checkBox[i].value)
+                }
+            }
+            document.getElementsByTagName("h1")[0].innerHTML = ans.join(",")
+        }
+    </script>
+
+</body>
+
+</html>
