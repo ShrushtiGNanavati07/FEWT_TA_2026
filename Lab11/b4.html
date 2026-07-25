@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object and array Dextructuring</title>
+</head>
+
+<body>
+
+    <script>
+        let arr = [1, 2, 3, 4, 5];
+        let [a, b, c,...RestArray] = arr;
+        document.write("a: " + a + "<br>");
+        document.write("b: " + b + "<br>");
+        document.write("c: " + c + "<br>");
+        document.write("Rest Array: " + RestArray + "<br>");
+
+        let obj = { name: "Peter", age: 24, city: "Queens" };
+        let { name, age } = obj;
+        document.write("name: " + name + "<br>");
+        document.write("age: " + age + "<br>");
+
+        //Use Cases
+        let colors = ["Red", "Blue", "Green", "Yellow", "Black"];
+
+        let [first, second, ...remaining] = colors;
+
+        console.log("first "+first);
+        console.log("second "+second);
+        console.log(remaining);
+        //Swap
+        let x = 10;
+        let y = 20;
+        console.log("Before Swap");
+        console.log(x);
+        console.log(y);
+
+        [x, y] = [y, x];
+
+        console.log("After Swap");
+        console.log("x: " + x);
+        console.log("y: " + y);
+    </script>
+
+</body>
+
+</html>

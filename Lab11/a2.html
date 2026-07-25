@@ -1,0 +1,50 @@
+<!-- 2. Demonstrate the spread operator. (A) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Operator</title>
+</head>
+<body>
+    <script>
+        let arr1 = [1, 2, 3];
+        let arr2 = [4, 5, 6];
+        // [...arrName]
+
+        //Merge
+        // document.write("<h2>Array Merge</h2>");
+        // let combinedArrayWithoutSpread = arr1 + arr2;
+        // document.write("Combined Array without Spread: " + combinedArrayWithoutSpread + "<br>");
+
+        // let combinedArray = [...arr1, ...arr2];
+        // document.write("Combined Array: " + combinedArray + "<br>");
+
+        // let obj1 = { Name: "Gwen", age: 24 };
+        // let obj2 = { State: "California", Country: "USA" };
+
+        // let combinedObject = { ...obj1, ...obj2 };
+        // document.write("Combined Object: " + combinedObject + "<br>");
+        // console.log(combinedObject);
+
+        //Copy
+        document.write("<h2>Array Copy</h2>");
+        let copiedArray = [...arr1];
+        document.write("Copied Array: " + copiedArray + "<br>");
+        let copiedArrayWithoutSpread = arr1;
+        document.write("Copied Array without Spread: " + copiedArrayWithoutSpread + "<br>");
+
+        //What is the differnce between copiedArray and copiedArrayWithoutSpread?
+        arr1.push(10);
+        document.write("Copied Array with Spread(after arr1.push (10)):<br>copiedArray: " + copiedArray + "<br>");
+        document.write("Copied Array without Spread(after arr1.push(10)):<br>copiedArrayWithoutSpread: " + copiedArrayWithoutSpread + "<br>");
+
+
+
+    </script>
+
+
+
+    
+</body>
+</html>

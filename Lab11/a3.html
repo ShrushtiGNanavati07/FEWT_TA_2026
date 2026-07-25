@@ -1,0 +1,52 @@
+<!-- 
+for(variable of iterable)
+{
+    // statements
+} 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For of loop</title>
+</head>
+
+<body>
+    <script>
+
+        let marks = [78, 85, 92, 88, 76];
+        let total = 0;
+
+        //Basicallly eliminates the need of using index to 
+        // access the elements of an array.
+
+        for (let mark of marks) {
+            //Iterations: 
+            // 1st Iteration: mark = 78
+            // 2nd Iteration: mark = 85
+            //and so on...
+            document.write("Mark: " + mark + "<br>");
+            total += mark;
+        }
+
+        document.write("Total Marks: " + total);
+        document.write("<br>Average: " + total / marks.length);
+
+        //Objects
+        let students = [
+            { id: 1, name: "Rahul", marks: 85 },
+            { id: 2, name: "Priya", marks: 92 },
+            { id: 3, name: "Amit", marks: 76 }
+        ];
+        document.writeln("<h2>Student Details</h2>");
+        for (let student of students) {
+            document.write("ID: " + student.id + "<br>");
+            document.write("Name: " + student.name + "<br>");
+            document.write("Marks: " + student.marks + "<br><br>");
+        }
+    </script>
+</body>
+
+</html>
