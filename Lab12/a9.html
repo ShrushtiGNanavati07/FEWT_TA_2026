@@ -1,0 +1,26 @@
+<!--  write a jQuery program to hide element with id "myEle" when clicked on a button-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <button id="btn">Click</button>
+    <p id="myEle">Hello World</p>
+
+    <h1>JQuery</h1>
+
+    <script>
+        $('#btn').click(function (){
+            $('#myEle').hide();
+        })
+        $('h1').click(()=>{document.write('Hello World H1 is clicked ')})
+    </script>
+  
+</body>
+</html>

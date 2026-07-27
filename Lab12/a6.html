@@ -1,0 +1,44 @@
+<!--write a jQuery program to append new row to existing table when clicked on button.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <button id="btn">Click</button>
+    <table border="1">
+        <thead>
+            <th>Roll No</th>
+            <th>Name</th>
+            <th>SPI</th>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>abc</td>
+                <td>8.8</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>def</td>
+                <td>8.9</td>
+            </tr>
+        </tbody>
+        
+    </table>
+
+    <script>
+        
+            $('#btn').click(()=>{
+                $('tbody').append("<tr> <td>3</td> <td>ghi</td> <td>9</td> </tr>")
+            })
+        
+    </script>
+</body>
+</html>

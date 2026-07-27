@@ -1,0 +1,35 @@
+<!-- write a jQuery program to append new list item with "Hello World" to existing unordered list when clicked on button.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+    <button id="btn1">Append</button>
+    <button id="btn2">Prepend</button>
+    <ul>
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+    </ul>
+
+    <script>
+        
+            $('#btn1').click(()=>{
+                $('ul').append("<li>Hello World</li>");
+            })
+
+             $('#btn2').click(function (){
+                $('ul').prepend("<li>Hello World</li>");
+            })
+            
+        
+    </script>
+</body>
+</html>

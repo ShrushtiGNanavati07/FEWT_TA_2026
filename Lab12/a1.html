@@ -1,0 +1,82 @@
+<!-- write a jQuery to fade object when clicked on it. 
+ 
+fadein() = Shows hidden object gradually.
+fadeout() = Hides object gradually.
+fadetoggle() = Hide and show alternately.
+fadeto() = Changes transparency (opacity).-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>All Fade Effects</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js">
+    </script>
+
+    <style>
+
+        #box{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin-bottom: 20px;
+        }
+
+        button{
+            margin: 5px;
+            padding: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div id="box"></div>
+
+    <button id="in">
+        Fade In
+    </button>
+
+    <button id="out">
+        Fade Out
+    </button>
+
+    <button id="toggle">
+        Fade Toggle
+    </button>
+
+    <button id="to">
+        Fade To
+    </button>
+
+    <script>
+
+            // Fade In
+            $("#in").click(function(){
+                $("#box").fadeIn(1000);
+            });
+
+            // Fade Out
+            $("#out").click(function(){
+                $("#box").fadeOut(1000);
+            });
+
+            // Fade Toggle
+            $("#toggle").click(function(){
+                $("#box").fadeToggle(1000);
+            });
+
+            // Fade To
+            $("#to").click(function(){
+                $("#box").fadeTo(1000, 0.3);  // Makes object 30% visible.
+            });
+
+    </script>
+
+</body>
+</html>
