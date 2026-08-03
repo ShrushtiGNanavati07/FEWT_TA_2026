@@ -1,0 +1,196 @@
+<!-- Setting up react environment.  -->
+
+## react
+
+- React is a JavaScript library used to build user interfaces (UI), especially for web applications.
+
+- It is mainly used to create:
+    - Dynamic websites
+    - Single Page Applications (SPA)
+    - Interactive user interfaces
+
+- React was developed by Meta (formerly Facebook).
+
+- In short , React is a JavaScript library used to build fast and interactive user interfaces using reusable components.
+
+- With React:
+    - Faster updates
+    - Reusable components
+    - Better performance
+    - Easier UI management
+
+
+======================================================================================================================
+
+## Important Features of React
+
+1. Component-Based Architecture
+    - React divides UI into small reusable parts called components.
+
+2. JSX
+    - React uses JSX (JavaScript XML).
+    - It lets us write HTML inside JavaScript.
+
+3. Virtual DOM
+    - React uses Virtual DOM for fast updates.
+    - Instead of reloading the whole webpage:
+            Old way → Full page reload
+            React → Update only changed part
+    - This makes React fast.
+
+4. Reusable Components
+    - Write once, use many times.
+
+- react only allow one parent element
+- if you want to return more than one element then you should use fragment tag. =>  <> </>
+
+=====================================================================================================================
+
+
+## JSX Rules
+
+1. Use className instead of class
+
+Wrong:
+<div class="box"></div>
+
+Correct:
+<div className="box"></div>
+
+
+2. Tags must be closed
+
+Wrong:
+<img>
+<input>
+
+Correct:
+<img />
+<input />
+
+
+3. JavaScript inside JSX uses {}
+
+Example:
+<h1>{name}</h1>
+<h2>{10 + 20}</h2>
+
+
+4. React component name should start with Capital Letter
+
+=======================================================================================================================
+
+
+## components
+
+=> What is a Component in React?
+
+    - A component is a reusable piece of UI (User Interface) in React.
+    - It is like a small block of code that returns HTML (JSX) and can be reused multiple times.
+
+=> Simple Definition
+    - A component is a reusable block of code in React used to create parts of a user interface.
+
+=> Why Components Are Used?
+    - Reusability
+    - Better Code Organization
+    - Easy Maintenance
+
+=> Types of Components in React
+1. Functional Component
+2. Class Component
+
+
+=> Component Naming Rules
+Rule 1: First Letter Must Be Capital
+Rule 2 : Component Must Return JSX
+Rule 3 : One Parent Element
+=====================================================================================================================
+
+- vite+react setup code
+
+## install node from official website of nodejs
+
+# 1. Create the project and follow the steps
+npm create vite@latest project_name (for ex: my-react-app)
+
+# 2. Navigate into your project folder
+cd my-react-app
+
+# 3. Install the dependencies
+npm install
+
+# 4. Start the local development server
+npm run dev
+
+
+=> project name rules
+
+- No Uppercase Letters
+- No Spaces
+- No Special Characters like !, @, #, $, %, *
+- Cannot start with a dot or underscore
+- Cannot use scoped package names directly
+
+
+==============================================================================================================================
+
+=> Folder Structure in Vite React
+
+react-app/
+│── node_modules/
+│── public/
+│── src/
+│   ├── App.jsx
+│   ├── main.jsx
+│── package.json
+│── vite.config.js
+
+
+
+=> main.jsx
+- Entry point of React app
+- Renders App component to browser
+- Usually not changed frequently
+
+=> App.jsx
+- Main component of project
+- Used to write UI and import other components
+- Mostly used for coding
+
+=> node_modules
+- Contains all installed packages/dependencies
+- Created automatically after npm install
+- Do not modify manually
+- If deleted, run:
+    npm install
+
+========================================================================================================================
+## npm 
+
+npm = Node Package Manager
+
+- Used to install packages
+- Comes with Node.js
+
+Common commands:
+
+npm install
+npm run dev
+npm install package_name
+
+
+=========================================================================================================================
+
+## jsx
+
+- JSX (JavaScript XML) is used to write HTML-like code inside JavaScript in React.
+
+- It makes UI creation easier and more readable.
+
+- Why JSX is Used?
+
+    - Write HTML inside JavaScript
+    - Makes code simple and readable
+    - Allows JavaScript expressions inside UI
+    - Helps create dynamic web pages easily
