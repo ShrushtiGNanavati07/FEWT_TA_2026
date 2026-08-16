@@ -1,0 +1,114 @@
+
+## What is Prop Drilling in React?
+    - Prop drilling is the process of passing data (props) from a parent component to a deeply nested child component through multiple intermediate components, even if those intermediate components don’t use the data.
+
+-In simple words:
+    Data travels through many components just to reach the component that actually needs it.
+ 
+
+Ex : Suppose you want to send a name from App to component F.
+
+    Structure:  App → B → C → D → E → F
+    -   Even though B, C, D, and E don’t use name, they still pass it forward.
+
+
+## Why is it called “drilling”?
+    - Because the prop is passed through many layers/components, like drilling through multiple levels to reach the destination.
+
+
+=> Passing props again and again becomes:
+
+- Hard to manage 
+- More code 
+- Difficult to maintain 
+
+ ============================================================================================
+ 
+ ## usestate hook 
+
+ => What is useState in React?
+
+    - useState is a React Hook used to create and manage state and data in a functional component.
+    - State means data that can change over time and when it changes, the component re-renders (updates the UI).
+    - When the state changes, React automatically re-renders the component and updates the UI.
+
+ => Syntax
+      const [state, setState] = useState(initialValue); 
+
+  state → Current value of the state.
+  setState → Function used to update the state.
+  initialValue → Initial value assigned to the state.
+
+
+=> Why use useState?
+
+    - Without useState, changing a variable will not update the UI.
+
+eg; 
+
+let count = 0;
+count++;
+
+- UI will not refresh.
+
+
+
+function App() {
+
+  let count = 0;
+
+  const increase = () => {
+    count++;
+    console.log(count);
+  };
+
+  return (
+    <>
+      <h1>Count: {count}</h1>
+
+      <button onClick={increase}>
+        Increment
+      </button>
+    </>
+  );
+}
+
+export default App;
+
+-----------------------------------------------------------------------------------------------
+eg;
+
+setCount(count + 1);
+
+- UI updates automatically.
+
+
+
+
+import { useState } from "react";
+
+function App() {
+
+  const [count, setCount] = useState(0);
+
+  const increase = () => {
+    setCount(count + 1);
+  };
+
+  return (
+    <>
+      <h1>Count: {count}</h1>
+
+      <button onClick={increase}>
+        Increment
+      </button>
+    </>
+  );
+}
+
+export default App;
+
+ ====================================================================================
+
+
+
